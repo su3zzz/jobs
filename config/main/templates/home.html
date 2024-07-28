@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Works</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom hover effect for zoom */
+        .hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+        .hover-zoom:hover p {
+            text-decoration: underline;
+        }
+
+
+
+    </style>
+</head>
+<body class="bg-white text-gray-800 text=sm">
+
+    <body class="bg-white text-gray-800 min-h-screen flex flex-col justify-between">
+
+        <!-- Navigation Bar -->
+        <header class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center">
+                        <h1 class="text-lg font-bold">Electric Works</h1>
+                    
+                    <nav class="hidden md:flex space-x-8 ml-10">
+                        <div class="relative">
+                            <button class="text-gray-700 hover:text-gray-900 font-medium">
+                                Find talent
+                                <svg class="ml-1 inline h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- Dropdown content -->
+                        </div>
+                        <div class="relative">
+                            <button class="text-gray-700 hover:text-gray-900 font-medium">
+                                Find work
+                                <svg class="ml-1 inline h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- Dropdown content -->
+                        </div>
+                        <a href="#" class="text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+                    </nav>
+                </div>
+                    <div class="flex items-center">
+                        <a href="login" class="text-gray-700 hover:text-gray-900 ml-6 font-medium">Log in</a>
+                        <a href="choose" class="bg-green-500 text-white font-medium ml-4 py-2 px-4 rounded-full">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <!-- Header -->
+    {% comment %} <header class="text-center py-4 ">
+        <h1 class="text-lg font-bold mb-20">Electric Works</h1>
+      
+    </header> {% endcomment %}
+    <p class="text-center  mt-1 text-base mb-8 mt-12">What type of electrical service do you need?</p>
+    <!-- Services Grid -->
+    <section class="max-w-4xl mx-auto px-2 mb-40">
+        <div class="flex justify-center">
+           
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Service Item -->
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'ev.jpg' %}" alt="EV Charger" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">EV Charger</p>
+                    </div>
+                </div>
+                <!-- Repeat for other services -->
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'fuse.jpg' %}" alt="Fuse/breaker issues" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">Fuse/breaker issues</p>
+                    </div>
+                </div>
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'house-wire.jpg' %}" alt="House re-wire" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">House re-wire</p>
+                    </div>
+                </div>
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'light.jpg' %}" alt="Lighting Install" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">Lighting Install</p>
+                    </div>
+                </div>
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'panel.jpg' %}" alt="Panel Upgrade" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">Panel Upgrade</p>
+                    </div>
+                </div>
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'solar.jpg' %}" alt="Solar panel installation" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">Solar panel installation</p>
+                    </div>
+                </div>
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'switch.jpg' %}" alt="Switch or outlet install" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">Switch or outlet install</p>
+                    </div>
+                </div>
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'electrical.jpg' %}" alt="Troubleshoot Electrical" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">Troubleshoot Electrical</p>
+                    </div>
+                </div>
+                <div class="relative bg-white shadow-md rounded-lg text-center hover-zoom transition-transform duration-300">
+                    <img src="{% static 'other.jpg' %}" alt="Other electrical service" class="w-full h-32 object-cover rounded-lg transition-transform duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                        <p class="text-white font-semibold transition-all duration-300">Other electrical service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+
+    <footer class="text-center py-1">
+        <div class="flex justify-center space-x-1">
+            <!-- Facebook icon -->
+            <a href="#" class="text-gray-600 hover:text-gray-900">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.675 0h-21.35C.601 0 0 .6 0 1.326v21.348C0 23.4.601 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.656-4.788 1.324 0 2.463.1 2.794.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.117C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.399 0 22.675 0z"/>
+                </svg>
+            </a>
+            <!-- Twitter icon -->
+            <a href="#" class="text-gray-600 hover:text-gray-900">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557a9.91 9.91 0 0 1-2.828.775 4.933 4.933 0 0 0 2.165-2.724 9.853 9.853 0 0 1-3.127 1.195 4.92 4.92 0 0 0-8.379 4.482 13.978 13.978 0 0 1-10.141-5.144 4.914 4.914 0 0 0 1.523 6.563 4.905 4.905 0 0 1-2.23-.616c-.054 2.28 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.085c.627 1.956 2.444 3.38 4.6 3.423A9.88 9.88 0 0 1 0 21.54a13.957 13.957 0 0 0 7.548 2.212c9.057 0 14.009-7.504 14.009-14.009 0-.214-.004-.428-.015-.641A10.012 10.012 0 0 0 24 4.557z"/>
+                </svg>
+            </a>
+            <!-- Instagram icon -->
+            <a href="#" class="text-gray-600 hover:text-gray-900">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.305 3.608 1.28.975.975 1.218 2.242 1.28 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.305 2.633-1.28 3.608-.975.975-2.242 1.218-3.608 1.28-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.305-3.608-1.28-.975-.975-1.218-2.242-1.28-3.608-.058-1.265-.07-1.645-.07-4.849s.012-3.584.07-4.849c.062-1.366.305-2.633 1.28-3.608.975-.975 2.242-1.218 3.608-1.28 1.265-.058 1.645-.07 4.849-.07M12 0C8.741 0 8.332.013 7.052.072 5.77.13 4.663.401 3.756 1.308c-.906.906-1.178 2.014-1.236 3.296C2.013 6.332 2 6.741 2 12s.013 5.668.072 6.948c.058 1.282.33 2.39 1.236 3.296.906.906 2.014 1.178 3.296 1.236 1.28.058 1.689.072 4.948.072s3.668-.013 4.948-.072c1.282-.058 2.39-.33 3.296-1.236.906-.906 1.178-2.014 1.236-3.296.058-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.058-1.282-.33-2.39-1.236-3.296-.906-.906-2.014-1.178-3.296-1.236C15.668 2.013 15.259 2 12 2s-3.668.013-4.948.072c-1.282.058-2.39.33-3.296 1.236-.906.906-1.178 2.014-1.236 3.296C2.013 8.332 2 8.741 2 12s.013 3.668.072 4.948c.058 1.282.33 2.39 1.236 3.296.906.906 2.014 1.178 3.296 1.236 1.28.058 1.689.072 4.948.072s3.668-.013 4.948-.072c1.282-.058 2.39-.33 3.296-1.236.906-.906 1.178-2.014 1.236-3.296C21.987 15.668 22 15.259 22 12s-.013-3.668-.072-4.948c-.058-1.282-.33-2.39-1.236-3.296-.906-.906-2.014-1.178-3.296-1.236C15.668 2.013 15.259 2 12 2zM12 5.838c-3.403 0-6.162 2.758-6.162 6.162s2.758 6.162 6.162 6.162 6.162-2.758 6.162-6.162S15.403 5.838 12 5.838zm0 10.162c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm6.406-11.845c-.796 0-1.443-.647-1.443-1.443s.647-1.443 1.443-1.443 1.443.647 1.443 1.443-.647 1.443-1.443 1.443z"/>
+                </svg>
+            </a>
+        </div>
+        <p class="mt-6 text-sm text-gray-500">&copy; 2024 Electric Works · Powered by </p>
+    </footer>
+</body>
+</html>

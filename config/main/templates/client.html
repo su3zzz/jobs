@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Works</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+        <style>
+            .modal {
+                display: none;
+            }
+            .modal.active {
+                display: flex;
+            }
+        </style>
+
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center">
+                {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
+                <h1 class="text-lg font-bold">Electric Works</h1>
+                <nav class="ml-6 space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-green-500">Jobs <i class="fas fa-caret-down"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Talents <i class="fas fa-caret-down"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Messages</a>
+                    
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search" class="border border-gray-300 rounded-md py-1 px-2">
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-bell"></i></a>
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-user"></i> </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex">
+        <!-- Left Sidebar -->
+        <div class="container mx-auto p-4">
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-semibold">All job posts</h1>
+                <button id="postnew" class="bg-green-500 text-white py-2 px-4 rounded-md">Post a new job</button>
+            </div>
+        
+            <!-- Search Bar and Filters -->
+            <div class="flex items-center mb-4">
+                <input type="text" placeholder="Search job postings" class="flex-1 p-2 border border-gray-300 rounded-md">
+
+            </div>
+        
+            <!-- Job Posts List -->
+            <div class="bg-white p-4 rounded-lg shadow-md border-b border-gray-300">
+                <div class="mb-2">
+                    <a href="#" onclick="showJobDetails(event, 'Solar Panel', 'We are seeking a skilled and dedicated Solar Panel Installer to join our growing team. The successful candidate will be responsible for the installation, maintenance, and repair of solar panel systems on residential, commercial, and industrial properties', 'Fixed-price - Intermediate - Est. Budget: $30')">
+                    <h2 class="text-lg font-semibold">Install Solar Panel</h2>
+                    <a>
+                    <p class="text-sm text-gray-500">5 applicants</p>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    <p>Posted -  Jul 25, 2024</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                 
+                    <button id="showApplicantsButton" class="bg-green-500 text-white py-1 px-3 rounded-md">Applicants</button>
+                </div>
+        
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md border-b border-gray-300 mb-2">
+                <div class="mb-2">
+                    <h2 class="text-lg font-semibold">Electrician</h2>
+                    <p class="text-sm text-gray-500">Created 57 minutes ago</p>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    <p>Draft - Saved Jul 28, 2024</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                    <button id="edit" class="bg-green-500 text-white py-1 px-3 rounded-md">Edit Job</button>
+                </div>
+            </div>
+        
+            <!-- Pagination -->
+            <div class="mt-4 flex justify-between items-center text-sm text-gray-500">
+                <span>1 - 2 of 2 Job posts</span>
+                <div>
+                    <button class="text-gray-500 mr-2">&lt; Previous</button>
+                    <button class="text-gray-500">Next &gt;</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div id="applicants-details-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-end hidden">
+        <div class="bg-white p-6 rounded-l-lg shadow-lg w-full md:w-1/2 h-full overflow-y-auto">
+            <h3 id="job-title" class="text-2xl font-semibold mb-4">Install Solar Panel</h3>
+   
+            <p id="job-budget" class="text-sm text-gray-500 mb-4">Budget: $15</p>
+            
+            <div class="mb-4">
+                <h4 class="text-xl font-semibold mb-2">Applicants</h4>
+                <div class="flex items-center mb-4">
+            
+                    <img src="{% static 'app2.png' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
+                  
+                    <div class="flex-1">
+                        <p>David P.</p>
+                        <p class="text-sm text-gray-500">lorem ipsum</p>
+                    </div>
+                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
+                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
+                </div>
+                <div class="flex items-center mb-4">
+                    <img src="{% static 'app3.png' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
+                    <div class="flex-1">
+                        <p>James B.</p>
+                        <p class="text-sm text-gray-500">Nullam hendrerit eu mattis</p>
+                    </div>
+                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
+                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
+                </div>
+                <div class="flex items-center mb-4">
+                    <img src="{% static 'app4.jpg' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
+               
+                    <div class="flex-1">
+                        <p>Hawk E.</p>
+                        <p class="text-sm text-gray-500">volutpat suspendisse facilisis ult</p>
+                    </div>
+                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
+                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
+                </div>
+                <div class="flex items-center mb-4">
+                    <img src="{% static 'app1.jpg' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
+                   
+                    <div class="flex-1">
+                        <p>Maria E.</p>
+                        <p class="text-sm text-gray-500">Volutpat luctus montes lacinia non nunc</p>
+                    </div>
+                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
+                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
+                </div>
+                <div class="flex items-center mb-4">
+                    <img src="{% static 'app5.jpg' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
+            
+                    <div class="flex-1">
+                        <p>Anne B.</p>
+                        <p class="text-sm text-gray-500"> Mollis imperdiet habitasse</p>
+                    </div>
+                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
+                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
+                </div>
+                <!-- Repeat the above div block for other applicants -->
+            </div>
+            
+            <button onclick="closeDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Close</button>
+        </div>
+    </div>
+    
+
+    <div id="job-details-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-end hidden">
+        <div class="bg-white p-6 rounded-l-lg shadow-lg w-full md:w-1/2 h-full overflow-y-auto">
+            <h3 id="job-title" class="text-2xl font-semibold mb-4"></h3>
+            <p id="job-description" class="mb-4"></p>
+           
+            <p>
+                <strong>Overview:</strong><br>
+                We are seeking a skilled and experienced Plumber to undertake a one-time plumbing project. The ideal candidate will be responsible for diagnosing, repairing, and maintaining plumbing systems to ensure functionality and efficiency. This is a temporary assignment ideal for an independent contractor or freelance plumber looking for additional work.
+                <br><br>
+                <strong>Key Responsibilities:</strong>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
+                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
+                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
+                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
+                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
+                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
+                </ul>
+                <strong>Qualifications:</strong>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
+                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
+                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
+                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
+                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
+                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
+                </ul>
+                <strong>Compensation:</strong><br>
+                Competitive hourly rate or flat project fee (to be discussed based on the scope of work and experience).
+            </p>
+            <p id="job-budget" class="text-sm text-gray-500 mb-4"></p>
+          
+            <button onclick="closeJobDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Close</button>
+        </div>
+    </div>
+
+    <div id="postJobModal" class="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-full md:w-3/4 lg:w-1/2 h-auto max-h-screen overflow-y-auto">
+            <h2 class="text-2xl font-semibold mb-4">Post a New Job</h2>
+            <form id="postJobForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jobTitle">Job Title</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobTitle" type="text" placeholder="Enter job title">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jobDescription">Job Description</label>
+                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobDescription" placeholder="Enter job description" rows="5"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jobBudget">Budget</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobBudget" type="text" placeholder="Enter job budget">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jobBudget">Location</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobBudget" type="text" placeholder="Enter Location">
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="postJob()">Post Job</button>
+                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="closePostJobModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+    document.getElementById('showApplicantsButton').addEventListener('click', function() {
+        document.getElementById('applicants-details-modal').classList.remove('hidden');
+    });
+
+    function closeDetails() {
+        document.getElementById('applicants-details-modal').classList.add('hidden');
+    }
+</script>
+
+<script>
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        dropdown.classList.toggle('hidden');
+    }
+</script>
+<script>
+    function showJobDetails(event, title, description, budget) {
+        event.preventDefault();
+        document.getElementById('job-title').innerText = title;
+        document.getElementById('job-description').innerText = description;
+        document.getElementById('job-budget').innerText = budget;
+        document.getElementById('job-details-modal').classList.remove('hidden');
+    }
+
+    function closeJobDetails() {
+        document.getElementById('job-details-modal').classList.add('hidden');
+    }
+
+    function applyForJob() {
+        alert('Applying for the job!');
+        closeJobDetails();
+    }
+
+
+</script>
+
+<script>
+    const postNewButton = document.getElementById('postnew');
+    const edit = document.getElementById('edit');
+    const postJobModal = document.getElementById('postJobModal');
+
+    postNewButton.addEventListener('click', () => {
+        postJobModal.style.display = 'flex';
+    });
+
+    edit.addEventListener('click', () => {
+        postJobModal.style.display = 'flex';
+    });
+    function closePostJobModal() {
+        postJobModal.style.display = 'none';
+    }
+
+    function postJob() {
+        // Implement the logic to post a job here
+        // For now, just close the modal
+        closePostJobModal();
+    }
+
+    // Hide the modal initially
+    document.addEventListener('DOMContentLoaded', () => {
+        postJobModal.style.display = 'none';
+    });
+</script>

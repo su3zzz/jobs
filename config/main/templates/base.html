@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upwork-like Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8">
+                <nav class="ml-6 space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-green-500">Find Work</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">My Jobs</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Reports</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Messages</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search" class="border border-gray-300 rounded-md py-1 px-2">
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-bell"></i></a>
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    {% block main %}{% endblock %}
+
+</body>
+</html>

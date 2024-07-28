@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as a Client or Freelancer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        .custom-radio:checked + .box-label {
+            border-color: green;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center justify-center">
+
+
+    <!-- Header -->
+    <header class="text-center py-4 ">
+        <h1 class="text-lg font-bold mb-20">Electric Works</h1>
+      
+    </header> 
+    <!-- Main Content -->
+    <main class="flex flex-col items-center justify-center py-20">
+        <h1 class="text-2xl font-semibold mb-8">Join as a client or freelancer</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- Client Option -->
+            <label for="clientRadio" class="box-label relative border-2 border-gray-200 rounded-lg p-6 flex flex-col items-center text-center cursor-pointer">
+                <div class="flex justify-between items-center w-full mb-4">
+                    <i class="fa-solid fa-briefcase text-gray-500"></i>
+                    <input type="radio" name="role" id="clientRadio" class="custom-radio" onclick="toggleButtons()">
+                </div>
+                <span class="text-xl font-medium">I'm a client,<br> hiring for a project</span>
+            </label>
+            <!-- Freelancer Option -->
+            <label for="freelancerRadio" class="box-label relative border-2 border-gray-200 rounded-lg p-6 flex flex-col items-center text-center cursor-pointer">
+                <div class="flex justify-between items-center w-full mb-4">
+                    <i class="fa-solid fa-user text-gray-500"></i>
+                    <input type="radio" name="role" id="freelancerRadio" class="custom-radio" onclick="toggleButtons()">
+                </div>
+                <span class="text-xl font-medium">I'm a freelancer,<br>looking for work</span>
+            </label>
+        </div>
+        <button id="clientButton" class="bg-green-500 text-white font-medium py-2 px-6 rounded-full mb-4 hidden" >Join as a Client</button>
+        <button id="freelancerButton" class="bg-green-500 text-white font-medium py-2 px-6 rounded-full mb-4 hidden" >Apply as a Freelancer</button>
+        <p class="text-gray-600">Already have an account? <a href="#" class="text-green-500">Log In</a></p>
+    </main>
+
+</body>
+</html>
+<script>
+    function toggleButtons() {
+        const clientRadio = document.getElementById('clientRadio');
+        const freelancerRadio = document.getElementById('freelancerRadio');
+        const clientButton = document.getElementById('clientButton');
+        const freelancerButton = document.getElementById('freelancerButton');
+        const clientLabel = document.querySelector('label[for="clientRadio"]');
+        const freelancerLabel = document.querySelector('label[for="freelancerRadio"]');
+
+        if (clientRadio.checked) {
+            clientButton.classList.remove('hidden');
+            freelancerButton.classList.add('hidden');
+            clientLabel.classList.remove('border-gray-200');
+            clientLabel.classList.add('border-green-500');
+            freelancerLabel.classList.remove('border-green-500');
+            freelancerLabel.classList.add('border-gray-200');
+        } else if (freelancerRadio.checked) {
+            freelancerButton.classList.remove('hidden');
+            clientButton.classList.add('hidden');
+            freelancerLabel.classList.remove('border-gray-200');
+            freelancerLabel.classList.add('border-green-500');
+            clientLabel.classList.remove('border-green-500');
+            clientLabel.classList.add('border-gray-200');
+        }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const clientButton = document.getElementById('clientButton');
+        const freelancerButton = document.getElementById('freelancerButton');
+
+        clientButton.addEventListener('click', redirectToClient);
+        freelancerButton.addEventListener('click', redirectToFreelancer);
+        
+
+        function redirectToClient() {
+            const type = "client"; // Example data
+
+            const url = new URL(window.location.href);
+            url.pathname = '/signup';
+            url.searchParams.append('type', type);
+     
+    
+            window.location.href = url.href;
+    
+        }
+
+        function redirectToFreelancer() {
+            const type = "worker"; // Example data
+
+            const url = new URL(window.location.href);
+            url.pathname = '/signup';
+            url.searchParams.append('type', type);
+          
+    
+            window.location.href = url.href;
+        }
+    });
+</script>

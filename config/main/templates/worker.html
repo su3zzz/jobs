@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Works</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center">
+                {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
+                <h1 class="text-lg font-bold">Electric Works</h1>
+                <nav class="ml-6 space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-green-500">Find Work</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">My Jobs</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Reports</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Messages</a>
+                    
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search" class="border border-gray-300 rounded-md py-1 px-2">
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-bell"></i></a>
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-user"></i> </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex">
+        <!-- Left Sidebar -->
+        <aside class="w-1/4">
+            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                <div class="flex items-center space-x-4">
+                    <img src="{% static 'user.png' %}" alt="User Avatar" class="h-16 w-16 rounded-full">
+                    <div>
+                        <h3 class="text-lg font-semibold">{{ user.first_name }} {{ user.last_name }} </h3>
+                        <p class="text-sm text-gray-500">lorem ipsum</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Complete your profile</span>
+                        <span class="text-sm text-gray-500">40%</span>
+                    </div>
+                    <div class="mt-2 bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+
+       
+                <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                    <h4 class="text-lg font-semibold mb-4 cursor-pointer" onclick="toggleDropdown('ads-dropdown')">
+                        Promote with ads
+                    
+                    </h4>
+                    <ul id="ads-dropdown" class="space-y-2 hidden">
+                        <li class="flex items-center justify-between">
+                            <span>Availability badge</span>
+                            <a href="#" class="text-green-500">Off</a>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>Boost your profile</span>
+                            <a href="#" class="text-green-500">Off</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                    <h4 class="text-lg font-semibold mb-4 cursor-pointer" onclick="toggleDropdown('test2')">Connect</h4>
+                    <ul id="test2" class="space-y-2 hidden">
+                        <li class="flex items-center justify-between">
+                            <span>Availability badge</span>
+                            <a href="#" class="text-green-500">Off</a>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>Boost your profile</span>
+                            <a href="#" class="text-green-500">Off</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+        </aside>
+
+        <!-- Main Feed -->
+        <section class="flex-1 ml-8">
+            <div class="bg-white p-8 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold mb-4">Jobs you might like</h2>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-gray-700 hover:text-green-500">Best Matches</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Most Recent</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Saved Jobs</a>
+                </div>
+                <div class="border-b border-gray-300 mb-4"></div>
+                <!-- Job Listing -->
+                <div class="space-y-6">
+                    {% comment %} <div class="p-4 bg-white rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold">Plumber</h3>
+                        <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $15</p>
+                        <p class="text-gray-700">We are seeking a skilled and experienced Plumber to Install sinks, toilets, faucets, bathtubs, water heaters, and other plumbing fixtures.</p>
+                        <div class="mt-2 flex space-x-2">
+                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Plumber</span>
+     
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
+                            <span>Payment unverified</span>
+                      
+                            <span>Japan</span>
+                        </div>
+                    </div> {% endcomment %}
+                    <a href="#" onclick="showJobDetails(event, 'Plumber', 'We are seeking a skilled and experienced Plumber to Install sinks, toilets, faucets, bathtubs, water heaters, and other plumbing fixtures.', 'Fixed-price - Intermediate - Est. Budget: $15')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
+                        <h3 class="text-lg font-semibold">Plumber</h3>
+                        <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $15</p>
+                        <p class="text-gray-700">We are seeking a skilled and experienced Plumber to Install sinks, toilets, faucets, bathtubs, water heaters, and other plumbing fixtures.</p>
+                        <div class="mt-2 flex space-x-2">
+                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Plumber</span>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
+                            <span>Payment unverified</span>
+                            <span>Japan</span>
+                        </div>
+                    </a>
+                    <a href="#" onclick="showJobDetails(event, 'Electrician', 'We are looking for an Electrician. Can install, repair, and maintain electrical systems and components, and ensure all work complies with relevant codes and standards.', 'Fixed-price - Intermediate - Est. Budget: $20')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
+                    
+                        <h3 class="text-lg font-semibold">Electrician</h3>
+                        <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $20</p>
+                        <p class="text-gray-700">We are looking for an Electrician. Can install, repair, and maintain electrical systems and components, and ensure all work complies with relevant codes and standards.</p>
+                        <div class="mt-2 flex space-x-2">
+                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Electrician</span>
+                
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
+                            <span>Cash</span>
+                 
+                            <span>Malaysia</span>
+                        </div>
+             
+                    </a>
+                    <a href="#" onclick="showJobDetails(event, 'Solar Panel', 'We are seeking a skilled and dedicated Solar Panel Installer to join our growing team. The successful candidate will be responsible for the installation, maintenance, and repair of solar panel systems on residential, commercial, and industrial properties', 'Fixed-price - Intermediate - Est. Budget: $30')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
+                       
+                        <h3 class="text-lg font-semibold">Solar Panel</h3>
+                        <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $30</p>
+                        <p class="text-gray-700">We are seeking a skilled and dedicated Solar Panel Installer to join our growing team. The successful candidate will be responsible for the installation, maintenance, and repair of solar panel systems on residential, commercial, and industrial properties. This role requires a strong understanding of solar technology, excellent problem-solving skills, and a commitment to safety and quality.</p>
+                        <div class="mt-2 flex space-x-2">
+                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Solar</span>
+      
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
+                            <span>Payment unverified</span>
+                        
+                            <span>Singapore</span>
+                        </div>
+                   
+                    </a>
+                    
+                    <!-- Add more job listings here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="job-details-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-end hidden">
+        <div class="bg-white p-6 rounded-l-lg shadow-lg w-full md:w-1/2 h-full overflow-y-auto">
+            <h3 id="job-title" class="text-2xl font-semibold mb-4"></h3>
+            <p id="job-description" class="mb-4"></p>
+           
+            <p>
+                <strong>Overview:</strong><br>
+                We are seeking a skilled and experienced Plumber to undertake a one-time plumbing project. The ideal candidate will be responsible for diagnosing, repairing, and maintaining plumbing systems to ensure functionality and efficiency. This is a temporary assignment ideal for an independent contractor or freelance plumber looking for additional work.
+                <br><br>
+                <strong>Key Responsibilities:</strong>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
+                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
+                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
+                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
+                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
+                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
+                </ul>
+                <strong>Qualifications:</strong>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
+                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
+                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
+                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
+                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
+                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
+                </ul>
+                <strong>Compensation:</strong><br>
+                Competitive hourly rate or flat project fee (to be discussed based on the scope of work and experience).
+            </p>
+            <p id="job-budget" class="text-sm text-gray-500 mb-4"></p>
+            <button onclick="applyForJob()" class="bg-green-500 text-white font-medium py-2 px-4 rounded-md">Apply</button>
+            <button onclick="closeJobDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Close</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        dropdown.classList.toggle('hidden');
+    }
+</script>
+<script>
+    function showJobDetails(event, title, description, budget) {
+        event.preventDefault();
+        document.getElementById('job-title').innerText = title;
+        document.getElementById('job-description').innerText = description;
+        document.getElementById('job-budget').innerText = budget;
+        document.getElementById('job-details-modal').classList.remove('hidden');
+    }
+
+    function closeJobDetails() {
+        document.getElementById('job-details-modal').classList.add('hidden');
+    }
+
+    function applyForJob() {
+        alert('Applying for the job!');
+        closeJobDetails();
+    }
+</script>
