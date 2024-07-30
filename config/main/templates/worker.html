@@ -16,9 +16,9 @@
                 {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
                 <h1 class="text-lg font-bold">Electric Works</h1>
                 <nav class="ml-6 space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-green-500">Find Work</a>
-                    <a href="#" class="text-gray-700 hover:text-green-500">My Jobs</a>
-                    <a href="#" class="text-gray-700 hover:text-green-500">Reports</a>
+                    <a href="/worker" class="text-gray-700 hover:text-green-500">Find Work</a>
+                    <a href="/workerjobs" class="text-gray-700 hover:text-green-500">My Jobs</a>
+         
                     <a href="#" class="text-gray-700 hover:text-green-500">Messages</a>
                     
                 </nav>
@@ -114,39 +114,40 @@
                             <span>Japan</span>
                         </div>
                     </div> {% endcomment %}
-                    <a href="#" onclick="showJobDetails(event, 'Plumber', 'We are seeking a skilled and experienced Plumber to Install sinks, toilets, faucets, bathtubs, water heaters, and other plumbing fixtures.', 'Fixed-price - Intermediate - Est. Budget: $15')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
-                        <h3 class="text-lg font-semibold">Plumber</h3>
+                    <a href="#" onclick="showJobDetails(event, 'Fix/Install Light', 'Install lights', 'Fixed-price - Intermediate - Est. Budget: $15', 'map1.png', 'loc1.jpg')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
+                        <h3 class="text-lg font-semibold">Fix/Install Lights</h3>
                         <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $15</p>
-                        <p class="text-gray-700">We are seeking a skilled and experienced Plumber to Install sinks, toilets, faucets, bathtubs, water heaters, and other plumbing fixtures.</p>
+                        <p class="text-gray-700">Lights Installation</p>
+                        
                         <div class="mt-2 flex space-x-2">
-                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Plumber</span>
+                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Fix Lights</span>
                         </div>
                         <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
                             <span>Payment unverified</span>
-                            <span>Japan</span>
+                            <span>Fox Valley</span>
                         </div>
                     </a>
-                    <a href="#" onclick="showJobDetails(event, 'Electrician', 'We are looking for an Electrician. Can install, repair, and maintain electrical systems and components, and ensure all work complies with relevant codes and standards.', 'Fixed-price - Intermediate - Est. Budget: $20')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
+                    <a href="#" onclick="showJobDetails(event, 'Charge EV', 'Looking for EV charger', 'Fixed-price - Intermediate - Est. Budget: $20', 'map2.png','ev1.jpg')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
                     
-                        <h3 class="text-lg font-semibold">Electrician</h3>
+                        <h3 class="text-lg font-semibold">Charge EV</h3>
                         <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $20</p>
-                        <p class="text-gray-700">We are looking for an Electrician. Can install, repair, and maintain electrical systems and components, and ensure all work complies with relevant codes and standards.</p>
+                        <p class="text-gray-700">Looking for EV charger</p>
                         <div class="mt-2 flex space-x-2">
-                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Electrician</span>
+                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Charge EV</span>
                 
                         </div>
                         <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
                             <span>Cash</span>
                  
-                            <span>Malaysia</span>
+                            <span>Richmound</span>
                         </div>
              
                     </a>
-                    <a href="#" onclick="showJobDetails(event, 'Solar Panel', 'We are seeking a skilled and dedicated Solar Panel Installer to join our growing team. The successful candidate will be responsible for the installation, maintenance, and repair of solar panel systems on residential, commercial, and industrial properties', 'Fixed-price - Intermediate - Est. Budget: $30')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
+                    <a href="#" onclick="showJobDetails(event, 'Fix Electrical Switchs', 'Install Solar Panel', 'Fixed-price - Intermediate - Est. Budget: $30', 'map5.png','loc3.jpg')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
                        
-                        <h3 class="text-lg font-semibold">Solar Panel</h3>
+                        <h3 class="text-lg font-semibold">Fix Electrical Switch </h3>
                         <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $30</p>
-                        <p class="text-gray-700">We are seeking a skilled and dedicated Solar Panel Installer to join our growing team. The successful candidate will be responsible for the installation, maintenance, and repair of solar panel systems on residential, commercial, and industrial properties. This role requires a strong understanding of solar technology, excellent problem-solving skills, and a commitment to safety and quality.</p>
+                        <p class="text-gray-700">Fix Electrical Switch</p>
                         <div class="mt-2 flex space-x-2">
                             <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Solar</span>
       
@@ -154,7 +155,7 @@
                         <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
                             <span>Payment unverified</span>
                         
-                            <span>Singapore</span>
+                            <span>Calgary</span>
                         </div>
                    
                     </a>
@@ -172,7 +173,9 @@
            
             <p>
                 <strong>Overview:</strong><br>
-                We are seeking a skilled and experienced Plumber to undertake a one-time plumbing project. The ideal candidate will be responsible for diagnosing, repairing, and maintaining plumbing systems to ensure functionality and efficiency. This is a temporary assignment ideal for an independent contractor or freelance plumber looking for additional work.
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.
+                tempus imperdiet sollicitudin consequat diam tincidunt ultricies.
+                <img id="job-location"  class="w-full h-auto mb-4 max-w-xs max-h-64" alt="Job Location">
                 <br><br>
                 <strong>Key Responsibilities:</strong>
                 <ul class="list-disc list-inside mb-4">
@@ -195,6 +198,8 @@
                 <strong>Compensation:</strong><br>
                 Competitive hourly rate or flat project fee (to be discussed based on the scope of work and experience).
             </p>
+            <strong>Location:</strong><br>
+            <img id="job-location-map"  class="w-full h-auto mb-4" alt="Job Location Map">
             <p id="job-budget" class="text-sm text-gray-500 mb-4"></p>
             <button onclick="applyForJob()" class="bg-green-500 text-white font-medium py-2 px-4 rounded-md">Apply</button>
             <button onclick="closeJobDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Close</button>
@@ -209,12 +214,14 @@
     }
 </script>
 <script>
-    function showJobDetails(event, title, description, budget) {
+    function showJobDetails(event, title, description, budget,map,job) {
         event.preventDefault();
         document.getElementById('job-title').innerText = title;
         document.getElementById('job-description').innerText = description;
         document.getElementById('job-budget').innerText = budget;
         document.getElementById('job-details-modal').classList.remove('hidden');
+        document.getElementById('job-location-map').src = mapBaseUrl + map;
+        document.getElementById('job-location').src = mapBaseUrl + job;
     }
 
     function closeJobDetails() {
@@ -225,4 +232,5 @@
         alert('Applying for the job!');
         closeJobDetails();
     }
+    const mapBaseUrl = '{% static "" %}';
 </script>

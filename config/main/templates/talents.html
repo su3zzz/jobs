@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hires</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center">
+                {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
+                <h1 class="text-lg font-bold">Electric Works</h1>
+                <nav class="ml-6 space-x-4">
+                    <a href="/client" class="text-gray-700 hover:text-green-500">Jobs </a>
+                    <a href="/talents" class="text-gray-700 hover:text-green-500">Talents </a>
+                    <a href="/messages" class="text-gray-700 hover:text-green-500">Messages</a>
+                    
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search" class="border border-gray-300 rounded-md py-1 px-2">
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-bell"></i></a>
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-user"></i> </a>
+            </div>
+        </div>
+    </header>
+    <div class="container mx-auto">
+        <div class="flex flex-wrap items-center justify-between mt-6">
+            <div class="w-full lg:w-1/4 bg-white rounded-lg shadow-lg p-4 mb-6 lg:mb-0">
+                <ul class="list-none p-0">
+                    <li class="mb-4"><a href="#" class="text-gray-700 font-semibold text-lg">Discover</a></li>
+                    <li class="mb-4"><a href="#" class="text-gray-700 font-semibold text-lg">Your hires</a></li>
+                 
+
+                </ul>
+                <div class="mt-8">
+                    <h3 class="text-gray-700 font-semibold text-lg mb-2">Your lists</h3>
+                    <button class="text-green-500 text-lg font-semibold">+</button>
+                </div>
+                <ul class="list-none p-0 mt-4">
+                    <li class="mb-4"><a href="#" class="text-gray-700 font-semibold text-lg"><span class="text-black">❤️</span> Saved workers</a></li>
+                    
+                </ul>
+            </div>
+            <div class="w-full lg:w-3/4 p-4">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Your hires</h2>
+        
+                <div class="flex flex-wrap -mx-2">
+                    <div class="w-full sm:w-1/3 p-2">
+                        <div class="bg-white rounded-lg shadow-lg p-4">
+                            <div class="flex items-center justify-center h-24">
+                                <div class="bg-gray-300 rounded-full h-16 w-16 flex items-center justify-center">
+                                    <span class="text-green-500 text-3xl font-bold">👤</span>
+                                </div>
+                            </div>
+                            <p class="text-center text-gray-700 mt-4">An absolute lifesaver</p>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/3 p-2">
+                        <div class="bg-white rounded-lg shadow-lg p-4">
+                            <div class="flex items-center justify-center h-24">
+                                <div class="bg-gray-300 rounded-full h-16 w-16 flex items-center justify-center">
+                                    <span class="text-green-500 text-3xl font-bold">👤</span>
+                                </div>
+                            </div>
+                            <p class="text-center text-gray-700 mt-4">A long-term collaborator</p>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/3 p-2">
+                        <div class="bg-white rounded-lg shadow-lg p-4">
+                            <div class="flex items-center justify-center h-24">
+                                <div class="bg-gray-300 rounded-full h-16 w-16 flex items-center justify-center">
+                                    <span class="text-green-500 text-3xl font-bold">👤</span>
+                                </div>
+                            </div>
+                            <p class="text-center text-gray-700 mt-4">Your go-to problem solver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center text-gray-600">
+                    You haven't hired anyone yet. 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

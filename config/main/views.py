@@ -19,8 +19,9 @@ def signup(request):
         last_name = request.POST['lastName']
         email = request.POST['email']
         password = request.POST['password']
-        country = request.POST['country']
+        # country = request.POST['country']
         role = request.POST['role']
+        country = 'test'
 
 
 
@@ -71,3 +72,12 @@ def worker(request):
 def client(request):
     return render(request, 'client.html')
     
+
+def talents(request):
+    return render(request, 'talents.html')
+
+def messages(request):
+    return render(request, 'messages.html')
+
+def workerjobs(request):
+    return render(request, 'worker_jobs.html')

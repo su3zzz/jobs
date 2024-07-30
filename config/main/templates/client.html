@@ -26,9 +26,9 @@
                 {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
                 <h1 class="text-lg font-bold">Electric Works</h1>
                 <nav class="ml-6 space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-green-500">Jobs <i class="fas fa-caret-down"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-green-500">Talents <i class="fas fa-caret-down"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-green-500">Messages</a>
+                    <a href="/client" class="text-gray-700 hover:text-green-500">Jobs </a>
+                    <a href="/talents" class="text-gray-700 hover:text-green-500">Talents </a>
+                    <a href="/messages" class="text-gray-700 hover:text-green-500">Messages</a>
                     
                 </nav>
             </div>
@@ -59,8 +59,8 @@
             <!-- Job Posts List -->
             <div class="bg-white p-4 rounded-lg shadow-md border-b border-gray-300">
                 <div class="mb-2">
-                    <a href="#" onclick="showJobDetails(event, 'Solar Panel', 'We are seeking a skilled and dedicated Solar Panel Installer to join our growing team. The successful candidate will be responsible for the installation, maintenance, and repair of solar panel systems on residential, commercial, and industrial properties', 'Fixed-price - Intermediate - Est. Budget: $30')">
-                    <h2 class="text-lg font-semibold">Install Solar Panel</h2>
+                    <a href="#" onclick="showJobDetails(event, 'Fix/Install Lights', 'Fix/Install Lights', 'Fixed-price - Intermediate - Est. Budget: $30','map1.png','loc1.jpg')">
+                    <h2 class="text-lg font-semibold">Fix/Install Lights</h2>
                     <a>
                     <p class="text-sm text-gray-500">5 applicants</p>
                 </div>
@@ -76,7 +76,7 @@
             <div class="bg-white p-4 rounded-lg shadow-md border-b border-gray-300 mb-2">
                 <div class="mb-2">
                     <h2 class="text-lg font-semibold">Electrician</h2>
-                    <p class="text-sm text-gray-500">Created 57 minutes ago</p>
+                    <p class="text-sm text-gray-500">Created 2 days ago</p>
                 </div>
                 <div class="text-gray-500 text-sm">
                     <p>Draft - Saved Jul 28, 2024</p>
@@ -171,8 +171,10 @@
            
             <p>
                 <strong>Overview:</strong><br>
-                We are seeking a skilled and experienced Plumber to undertake a one-time plumbing project. The ideal candidate will be responsible for diagnosing, repairing, and maintaining plumbing systems to ensure functionality and efficiency. This is a temporary assignment ideal for an independent contractor or freelance plumber looking for additional work.
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.
+                tempus imperdiet sollicitudin consequat diam tincidunt ultricies
                 <br><br>
+                <img id="job-location"  class="w-full h-auto mb-4 max-w-xs max-h-64" alt="Job Location">
                 <strong>Key Responsibilities:</strong>
                 <ul class="list-disc list-inside mb-4">
                     <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
@@ -194,7 +196,12 @@
                 <strong>Compensation:</strong><br>
                 Competitive hourly rate or flat project fee (to be discussed based on the scope of work and experience).
             </p>
-            <p id="job-budget" class="text-sm text-gray-500 mb-4"></p>
+   
+            <p id="job-budget" class="text-sm text-red-500 mb-4"><strong>$Fixed-price - Est. Budget: $30<strong></p>
+         
+            <strong>Location:</strong><br>
+            Fox Valley
+            <img id="job-location-map"  class="w-full h-auto mb-4" alt="Job Location Map">
           
             <button onclick="closeJobDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Close</button>
         </div>
@@ -217,8 +224,12 @@
                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobBudget" type="text" placeholder="Enter job budget">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jobBudget">Location</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobBudget" type="text" placeholder="Enter Location">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jobLocation">Location</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobLocation" type="text" placeholder="Enter location">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jobImage">Image</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobImage" type="file" accept="image/*">
                 </div>
                 <div class="flex items-center justify-between">
                     <button class="bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="postJob()">Post Job</button>
@@ -227,7 +238,6 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>
 <script>
@@ -247,12 +257,14 @@
     }
 </script>
 <script>
-    function showJobDetails(event, title, description, budget) {
+    function showJobDetails(event, title, description, budget,map,job) {
         event.preventDefault();
         document.getElementById('job-title').innerText = title;
         document.getElementById('job-description').innerText = description;
         document.getElementById('job-budget').innerText = budget;
         document.getElementById('job-details-modal').classList.remove('hidden');
+        document.getElementById('job-location-map').src = mapBaseUrl + map;
+        document.getElementById('job-location').src = mapBaseUrl + job;
     }
 
     function closeJobDetails() {
@@ -293,4 +305,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         postJobModal.style.display = 'none';
     });
+
+    const mapBaseUrl = '{% static "" %}';
 </script>
