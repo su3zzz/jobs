@@ -16,6 +16,7 @@
                 {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
                 <h1 class="text-lg font-bold">Electric Works</h1>
                 <nav class="ml-6 space-x-4">
+                    <a href="/profile" class="text-gray-700 hover:text-green-500">Profile</a>
                     <a href="/worker" class="text-gray-700 hover:text-green-500">Find Work</a>
                     <a href="/workerjobs" class="text-gray-700 hover:text-green-500">My Jobs</a>
          
@@ -114,13 +115,13 @@
                             <span>Japan</span>
                         </div>
                     </div> {% endcomment %}
-                    <a href="#" onclick="showJobDetails(event, 'Fix/Install Light', 'Install lights', 'Fixed-price - Intermediate - Est. Budget: $15', 'map1.png', 'loc1.jpg')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
-                        <h3 class="text-lg font-semibold">Fix/Install Lights</h3>
+                    <a href="#" onclick="showJobDetails(event, 'Maintenance , Installation, & Upgrades', 'Rewire my business,it’s a simple fix or a comprehensive overhaul.', 'Fixed-price - Intermediate - Est. Budget: $15', 'map1.png', 'loc1.jpg')" class="block p-4 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
+                        <h3 class="text-lg font-semibold">Maintenance , Installation, & Upgrades</h3>
                         <p class="text-sm text-gray-500 mb-2">Fixed-price - Intermediate - Est. Budget: $15</p>
-                        <p class="text-gray-700">Lights Installation</p>
+                        <p class="text-gray-700">Maintenance , Installation, & Upgrades</p>
                         
                         <div class="mt-2 flex space-x-2">
-                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Fix Lights</span>
+                            <span class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">Maintenance , Installation, & Upgrades</span>
                         </div>
                         <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
                             <span>Payment unverified</span>
@@ -169,39 +170,20 @@
     <div id="job-details-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-end hidden">
         <div class="bg-white p-6 rounded-l-lg shadow-lg w-full md:w-1/2 h-full overflow-y-auto">
             <h3 id="job-title" class="text-2xl font-semibold mb-4"></h3>
-            <p id="job-description" class="mb-4"></p>
+           
            
             <p>
                 <strong>Overview:</strong><br>
-                Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.
-                tempus imperdiet sollicitudin consequat diam tincidunt ultricies.
+                <p id="job-description" class="mb-4"></p>
+               
                 <img id="job-location"  class="w-full h-auto mb-4 max-w-xs max-h-64" alt="Job Location">
                 <br><br>
-                <strong>Key Responsibilities:</strong>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
-                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
-                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
-                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
-                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
-                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
-                </ul>
-                <strong>Qualifications:</strong>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
-                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
-                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
-                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
-                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
-                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
-                </ul>
-                <strong>Compensation:</strong><br>
-                Competitive hourly rate or flat project fee (to be discussed based on the scope of work and experience).
+                
             </p>
             <strong>Location:</strong><br>
             <img id="job-location-map"  class="w-full h-auto mb-4" alt="Job Location Map">
             <p id="job-budget" class="text-sm text-gray-500 mb-4"></p>
-            <button onclick="applyForJob()" class="bg-green-500 text-white font-medium py-2 px-4 rounded-md">Apply</button>
+            <button onclick="applyForJob()" class="bg-green-500 text-white font-medium py-2 px-4 rounded-md">Grab</button>
             <button onclick="closeJobDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Close</button>
         </div>
     </div>

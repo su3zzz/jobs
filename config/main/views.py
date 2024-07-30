@@ -40,7 +40,7 @@ def signup(request):
             if role == 'client':
                 return redirect('client')  
             else:
-                return redirect('worker')  
+                return redirect('payment')  
 
     return render(request, 'signup.html')
     # return render(request,'signup.html')
@@ -81,3 +81,12 @@ def messages(request):
 
 def workerjobs(request):
     return render(request, 'worker_jobs.html')
+
+def profile(request):
+    return render(request, 'profile.html')
+
+def profile2(request):
+    return render(request, 'profile2.html')
+
+def payment(request):
+    return render(request, 'payment.html')

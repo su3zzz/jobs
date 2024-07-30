@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center">
+                {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
+                <h1 class="text-lg font-bold">Electric Works</h1>
+                <nav class="ml-6 space-x-4">
+                    <a href="/worker" class="text-gray-700 hover:text-green-500">Find Work</a>
+                    <a href="/workerjobs" class="text-gray-700 hover:text-green-500">My Jobs</a>
+         
+                    <a href="#" class="text-gray-700 hover:text-green-500">Messages</a>
+                    
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search" class="border border-gray-300 rounded-md py-1 px-2">
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-bell"></i></a>
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-user"></i> </a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+        <div class="flex items-center space-x-6 mb-4">
+            <img class="w-24 h-24 rounded-full" src="path_to_profile_image.jpg" alt="Profile Picture">
+            <div>
+                <h2 class="text-2xl font-semibold">Best P.</h2>
+                <p class="text-gray-600">Pasig City, Philippines – 4:14 pm local time</p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center mb-6">
+            <button class="text-white bg-green-500 px-4 py-2 rounded-md">See public view</button>
+            <button class="text-white bg-green-500 px-4 py-2 rounded-md">Profile settings</button>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Full Stack Web Developer</h3>
+            <p class="mb-2">I have years of experience in Web Development and have done many small or large projects. I could help you with anything</p>
+            <p>HTML</p>
+            <p>FRONTEND</p>
+            <p>BACKEND</p>
+            <p class="mt-2 text-xl font-semibold">$7.00/hr</p>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Promote with ads</h3>
+            <div class="flex items-center mb-2">
+                <span class="flex-grow">Availability badge</span>
+                <span>Off</span>
+            </div>
+            <div class="flex items-center">
+                <span class="flex-grow">Boost your profile</span>
+                <span>Off</span>
+            </div>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Video introduction</h3>
+            <button class="text-white bg-green-500 px-4 py-2 rounded-md">+</button>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Hours per week</h3>
+            <p>More than 30 hrs/week</p>
+            <p>No contract-to-hire preference set</p>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Languages</h3>
+            <p>English: Fluent</p>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Verifications</h3>
+            <p>Military veteran</p>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-2">Portfolio</h3>
+            <button class="text-white bg-green-500 px-4 py-2 rounded-md">+</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -59,17 +59,17 @@
             <!-- Job Posts List -->
             <div class="bg-white p-4 rounded-lg shadow-md border-b border-gray-300">
                 <div class="mb-2">
-                    <a href="#" onclick="showJobDetails(event, 'Fix/Install Lights', 'Fix/Install Lights', 'Fixed-price - Intermediate - Est. Budget: $30','map1.png','loc1.jpg')">
+                    <a href="#" onclick="showJobDetails(event, 'Fix/Install Lights', 'Fix/Install Lights', 'Fixed-price - Est. Budget: $30','map1.png','loc1.jpg')">
                     <h2 class="text-lg font-semibold">Fix/Install Lights</h2>
                     <a>
-                    <p class="text-sm text-gray-500">5 applicants</p>
+                    <p class="text-sm text-gray-500">grabbed by: David O.</p>
                 </div>
                 <div class="text-gray-500 text-sm">
                     <p>Posted -  Jul 25, 2024</p>
                 </div>
                 <div class="mt-4 flex justify-between items-center">
                  
-                    <button id="showApplicantsButton" class="bg-green-500 text-white py-1 px-3 rounded-md">Applicants</button>
+                    <button id="showApplicantsButton" class="bg-green-500 text-white py-1 px-3 rounded-md">Grabbed</button>
                 </div>
         
             </div>
@@ -100,66 +100,106 @@
 
     <div id="applicants-details-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-end hidden">
         <div class="bg-white p-6 rounded-l-lg shadow-lg w-full md:w-1/2 h-full overflow-y-auto">
-            <h3 id="job-title" class="text-2xl font-semibold mb-4">Install Solar Panel</h3>
+            <h3 id="job-title" class="text-2xl font-semibold mb-4">Fix/Install Lights</h3>
    
             <p id="job-budget" class="text-sm text-gray-500 mb-4">Budget: $15</p>
             
             <div class="mb-4">
-                <h4 class="text-xl font-semibold mb-2">Applicants</h4>
-                <div class="flex items-center mb-4">
+                <h4 class="text-xl font-semibold mb-2">Grabbed by:</h4>
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center space-x-6 mb-4">
+                        <img class="w-24 h-24 rounded-full" src="{% static 'app3.png' %}" alt="Profile Picture">
+                        <div>
+                            <h2 class="text-2xl font-semibold">David Oliver </h2>
+                            <p class="text-gray-600"> Calgary, Canada</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-6">
             
-                    <img src="{% static 'app2.png' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
-                  
-                    <div class="flex-1">
-                        <p>David P.</p>
-                        <p class="text-sm text-gray-500">lorem ipsum</p>
+          
                     </div>
-                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
-                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
-                </div>
-                <div class="flex items-center mb-4">
-                    <img src="{% static 'app3.png' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
-                    <div class="flex-1">
-                        <p>James B.</p>
-                        <p class="text-sm text-gray-500">Nullam hendrerit eu mattis</p>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Electrical Design & Installation</h3>
+                        <p class="mb-2">My services include electrical installations for new construction and renovations, security lights, and routine electrical issues as they arise. I'll get to know your design, pull the necessary permits, and keep the project on track.</p>
+              
+              
                     </div>
-                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
-                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
-                </div>
-                <div class="flex items-center mb-4">
-                    <img src="{% static 'app4.jpg' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
-               
-                    <div class="flex-1">
-                        <p>Hawk E.</p>
-                        <p class="text-sm text-gray-500">volutpat suspendisse facilisis ult</p>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Maintenance, Installation, & Upgrades</h3>
+                        <p class="mb-2">I can rewire your home or business, whether it’s a simple fix or a comprehensive overhaul. I also provide routine support for issues like outlet installations and bulb replacement for hard-to-reach fixtures, and we can help save you money by identifying steps you can take to be more energy efficient.</p>
+              
+              
                     </div>
-                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
-                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
-                </div>
-                <div class="flex items-center mb-4">
-                    <img src="{% static 'app1.jpg' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Construction & Renovation</h3>
+                        <p class="mb-2">I use best practices to ensure your electrical system is up to code, ensuring your home or business runs as safely and efficiently as possible. I also work seamlessly with other subcontractors to get the job done.</p>
+              
+              
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Security Lighting</h3>
+                        <p class="mb-2">Can help you create a comprehensive plan for installing security lights in key locations within and around your home or business — including parking lots and other exterior spaces. I also install emergency backup lighting.</p>
+              
+              
+                    </div>
                    
-                    <div class="flex-1">
-                        <p>Maria E.</p>
-                        <p class="text-sm text-gray-500">Volutpat luctus montes lacinia non nunc</p>
-                    </div>
-                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
-                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
-                </div>
-                <div class="flex items-center mb-4">
-                    <img src="{% static 'app5.jpg' %}" class="w-10 h-10 rounded-full mr-3" alt="Applicant Icon">
             
-                    <div class="flex-1">
-                        <p>Anne B.</p>
-                        <p class="text-sm text-gray-500"> Mollis imperdiet habitasse</p>
+                    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-semibold mb-6">David's Recent Work History </h2>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-green-700">Fix Lights</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500">★★★<span class="text-gray-300">★★</span></span>
+                            <span class="ml-2 text-gray-600">3</span>
+                        </div>
+                        <p class="mb-2"><strong> Mst Mursida A.:</strong>  did a fantastic job! His  knowledge is outstanding.</p>
+                        <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price</p>
                     </div>
-                    <button class="bg-blue-500 text-white py-1 px-2 rounded-md mx-4">Details</button>
-                    <button class="bg-green-500 text-white py-1 px-2 rounded-md">Hire</button>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-green-700">Electrian Expert</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500">★★★★<span class="text-gray-300">★</span></span>
+                            <span class="ml-2 text-gray-600">4</span>
+                        </div>
+                        <p class="mb-2"><strong>Navid Anjum S.:</strong> knows his stuff when it comes to automation and Pipedrive. Pleased with the delivery!</p>
+                        <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-green-700">Install Solar Panel</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500">★★★★<span class="text-gray-300">★</span></span>
+                            <span class="ml-2 text-gray-600">4</span>
+                        </div>
+                        <p class="mb-2"><strong> Mst K.:</strong>  did a great job from start to finish. He was communicative, responded well to feedback, was patient & delivered what was needed with the right touch.</p>
+                        <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-green-700">Fix switch</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="ml-2 text-gray-600">5</span>
+                        </div>
+                        <p class="mb-2"><strong>Jabed M.:</strong>  Jabed exceeded our expectations with high-quality work. Jabed was prompt, and professional.I look forward to working with him again.</p>
+                        <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price $10.00</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-green-700">Electrician</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500">★★★★<span class="text-gray-300">★</span></span>
+                            <span class="ml-2 text-gray-600">4</span>
+                        </div>
+                        <p class="mb-2"><strong> David P.: </strong>Very responsible worker. Thanks for the opportunity!</p>
+                        <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price $30.00</p>
+                    </div>
+                    <a href="#" class="text-green-700">View more (45)</a>
+                    </div>
                 </div>
                 <!-- Repeat the above div block for other applicants -->
             </div>
-            
-            <button onclick="closeDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Close</button>
+            <button onclick="messageJob()" class="bg-blue-500 text-white font-medium py-2 px-4 rounded-md ml-2">Message</button>
+            <button onclick="jobFinish()" class="bg-green-500 text-white font-medium py-2 px-4 rounded-md ml-2">Job Finished</button>
+            <button onclick="closeDetails()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md ml-2">Cancel Job</button>
+ 
         </div>
     </div>
     
@@ -175,26 +215,8 @@
                 tempus imperdiet sollicitudin consequat diam tincidunt ultricies
                 <br><br>
                 <img id="job-location"  class="w-full h-auto mb-4 max-w-xs max-h-64" alt="Job Location">
-                <strong>Key Responsibilities:</strong>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
-                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
-                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
-                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
-                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
-                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
-                </ul>
-                <strong>Qualifications:</strong>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus accumsa.</li>
-                    <li>tempus imperdiet sollicitudin consequat diam tincidunt ultricies. </li>
-                    <li>Justo tincidunt ridiculus orci senectus, purus magna. Malesuada nec.</li>
-                    <li>imperdiet pharetra montes mi ante sollicitudin. Eros ornare bibendum</li>
-                    <li>parturient consectetur imperdiet netus natoque natoque. Nisl dictum</li>
-                    <li>Sit sagittis porta senectus imperdiet felis nibh. Quisque eu sodales</li>
-                </ul>
-                <strong>Compensation:</strong><br>
-                Competitive hourly rate or flat project fee (to be discussed based on the scope of work and experience).
+                
+     
             </p>
    
             <p id="job-budget" class="text-sm text-red-500 mb-4"><strong>$Fixed-price - Est. Budget: $30<strong></p>
@@ -238,6 +260,28 @@
             </form>
         </div>
     </div>
+
+    <div id="ratingModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full">
+            <h3 class="text-2xl mb-4">Rate this worker</h3>
+            <div class="flex items-center mb-4">
+                <div id="stars" class="flex">
+                    <button class="text-gray-300 text-3xl" onclick="setRating(1)">★</button>
+                    <button class="text-gray-300 text-3xl" onclick="setRating(2)">★</button>
+                    <button class="text-gray-300 text-3xl" onclick="setRating(3)">★</button>
+                    <button class="text-gray-300 text-3xl" onclick="setRating(4)">★</button>
+                    <button class="text-gray-300 text-3xl" onclick="setRating(5)">★</button>
+                </div>
+                <span id="ratingValue" class="ml-2 text-gray-600">0</span>
+            </div>
+            <textarea id="ratingDescription" class="w-full p-2 border border-gray-300 rounded-md mb-4" rows="4" placeholder="Describe your experience"></textarea>
+            <div class="flex justify-end">
+                {% comment %} <button onclick="closeModal()" class="bg-red-500 text-white font-medium py-2 px-4 rounded-md mr-2">Cancel</button> {% endcomment %}
+                <button onclick="closeModal()" class="bg-gray-500 text-white font-medium py-2 px-4 rounded-md mr-2">Skip</button>
+                <button onclick="submitRating()" class="bg-green-500 text-white font-medium py-2 px-4 rounded-md">Submit</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 <script>
@@ -257,6 +301,36 @@
     }
 </script>
 <script>
+    let rating = 0;
+
+        function jobFinish() {
+            document.getElementById('ratingModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('ratingModal').classList.add('hidden');
+        }
+
+        function setRating(value) {
+            rating = value;
+            const stars = document.getElementById('stars').children;
+            for (let i = 0; i < stars.length; i++) {
+                if (i < value) {
+                    stars[i].classList.add('text-yellow-500');
+                    stars[i].classList.remove('text-gray-300');
+                } else {
+                    stars[i].classList.add('text-gray-300');
+                    stars[i].classList.remove('text-yellow-500');
+                }
+            }
+            document.getElementById('ratingValue').innerText = value;
+        }
+
+        function submitRating() {
+            const description = document.getElementById('ratingDescription').value;
+            console.log('Rating submitted:', rating, description);
+            closeModal();
+        }
     function showJobDetails(event, title, description, budget,map,job) {
         event.preventDefault();
         document.getElementById('job-title').innerText = title;
@@ -274,6 +348,15 @@
     function applyForJob() {
         alert('Applying for the job!');
         closeJobDetails();
+    }
+    function messageJob(){
+        const url = new URL(window.location.href);
+        url.pathname = '/messages';
+      
+      
+
+        window.location.href = url.href;
+
     }
 
 

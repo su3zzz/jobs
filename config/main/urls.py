@@ -12,6 +12,9 @@ urlpatterns = [
     path("talents/", views.talents, name="talents"),
     path("messages/", views.messages, name="messages"),
     path("workerjobs/", views.workerjobs, name="workerjobs"),
+    path("profile/", views.profile, name="profile"),
+    path("profile2/", views.profile2, name="profile2"),
+    path("payment/", views.payment, name="payment"),
 ]
 
 

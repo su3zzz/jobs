@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-white shadow-sm mb-6">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center">
+                {% comment %} <img src="{% static 'images/upwork-logo.png' %}" alt="Upwork Logo" class="h-8"> {% endcomment %}
+                <h1 class="text-lg font-bold">Electric Works</h1>
+                <nav class="ml-6 space-x-4">
+                    <a href="/profile" class="text-gray-700 hover:text-green-500">Profile</a>
+                    <a href="/worker" class="text-gray-700 hover:text-green-500">Find Work</a>
+                    <a href="/workerjobs" class="text-gray-700 hover:text-green-500">My Jobs</a>
+         
+                    <a href="/jobs" class="text-gray-700 hover:text-green-500">Messages</a>
+                    
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search" class="border border-gray-300 rounded-md py-1 px-2">
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-bell"></i></a>
+                <a href="#" class="text-gray-700 hover:text-green-500"><i class="fas fa-user"></i> </a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+        <div class="flex items-center space-x-6 mb-4">
+            <img class="w-24 h-24 rounded-full" src="{% static 'app3.png' %}" alt="Profile Picture">
+            <div>
+                <h2 class="text-2xl font-semibold">{{ user.first_name }} {{ user.last_name }} </h2>
+                <p class="text-gray-600"> Calgary, Canada</p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center mb-6">
+
+            <button class="text-white bg-green-500 px-4 py-2 rounded-md">Profile Settings</button>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Electrical Design & Installation</h3>
+            <p class="mb-2">My services include electrical installations for new construction and renovations, security lights, and routine electrical issues as they arise. We’ll get to know your design, pull the necessary permits, and keep the project on track.</p>
+  
+  
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Maintenance, Installation, & Upgrades</h3>
+            <p class="mb-2">I can rewire your home or business, whether it’s a simple fix or a comprehensive overhaul. I also provide routine support for issues like outlet installations and bulb replacement for hard-to-reach fixtures, and we can help save you money by identifying steps you can take to be more energy efficient.</p>
+  
+  
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Construction & Renovation</h3>
+            <p class="mb-2">I use best practices to ensure your electrical system is up to code, ensuring your home or business runs as safely and efficiently as possible. We also work seamlessly with other subcontractors to get the job done.</p>
+  
+  
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Security Lighting</h3>
+            <p class="mb-2">Can help you create a comprehensive plan for installing security lights in key locations within and around your home or business — including parking lots and other exterior spaces. We also install emergency backup lighting.</p>
+  
+  
+        </div>
+       
+
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold mb-6">{{ user.first_name }}'s Recent Work History </h2>
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold text-green-700">Fix Lights</h3>
+            <div class="flex items-center mb-2">
+                <span class="text-yellow-500">★★★<span class="text-gray-300">★★</span></span>
+                <span class="ml-2 text-gray-600">3</span>
+            </div>
+            <p class="mb-2"><strong> Mst Mursida A.:</strong>  did a fantastic job! His  knowledge is outstanding.</p>
+            <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price</p>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold text-green-700">Electrian Expert</h3>
+            <div class="flex items-center mb-2">
+                <span class="text-yellow-500">★★★★<span class="text-gray-300">★</span></span>
+                <span class="ml-2 text-gray-600">4</span>
+            </div>
+            <p class="mb-2"><strong>Navid Anjum S.:</strong> knows his stuff when it comes to automation and Pipedrive. Pleased with the delivery!</p>
+            <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price</p>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold text-green-700">Install Solar Panel</h3>
+            <div class="flex items-center mb-2">
+                <span class="text-yellow-500">★★★★<span class="text-gray-300">★</span></span>
+                <span class="ml-2 text-gray-600">4</span>
+            </div>
+            <p class="mb-2"><strong> Mst K.:</strong>  did a great job from start to finish. He was communicative, responded well to feedback, was patient & delivered what was needed with the right touch.</p>
+            <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price</p>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold text-green-700">Fix switch</h3>
+            <div class="flex items-center mb-2">
+                <span class="text-yellow-500">★★★★★</span>
+                <span class="ml-2 text-gray-600">5</span>
+            </div>
+            <p class="mb-2"><strong>Jabed M.:</strong>  Jabed exceeded our expectations with high-quality work. Jabed was prompt, and professional. We look forward to working with him again.</p>
+            <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price $10.00</p>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold text-green-700">Electrician</h3>
+            <div class="flex items-center mb-2">
+                <span class="text-yellow-500">★★★★<span class="text-gray-300">★</span></span>
+                <span class="ml-2 text-gray-600">4</span>
+            </div>
+            <p class="mb-2"><strong> David P.: </strong>Very responsible worker. Thanks for the opportunity!</p>
+            <p class="text-gray-500">Jul 2024 - Jul 2024 • Fixed-price $30.00</p>
+        </div>
+        <a href="#" class="text-green-700">View more (45)</a>
+        </div>
+    </div>
+</body>
+</html>
